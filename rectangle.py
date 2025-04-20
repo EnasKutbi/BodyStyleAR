@@ -13,19 +13,19 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame4")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame4") #مسار الفريم
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 def open_page():
-    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py" #مسار صفحة القياسات
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 window = Tk()
-window.title('Project')
+window.title('Project') #عنوان الصفحة
 
 window.geometry("396x688")
 window.configure(bg = "#FFFFFF")
@@ -49,7 +49,7 @@ image_1 = canvas.create_image(
     536.0,
     image=image_image_1
 )
-
+#زر تم
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(

@@ -13,13 +13,14 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame1") #مسار الفريم
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def open_sizes():  # تتأكد انه الحقول غير فارغة
+def open_sizes():  
+    # تتأكد انه جميع الحقول غير فارغة
     if (entry_1.get() == "" or
         entry_2.get() == ""):
         messagebox.showwarning("خطا", "عذراً، املأ جميع الحقول")
@@ -29,7 +30,7 @@ def open_sizes():  # تتأكد انه الحقول غير فارغة
     subprocess.run(["python", file_to_run_path], check=True)
 
 def open_register():
-    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\register.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\register.py" # مسار صفحة مستخدم جديد
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 

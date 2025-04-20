@@ -13,29 +13,30 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame2")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame2") # مسار الفريم
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 def open_sizes():
+    # نتأكد ان جميع الحقول غير فارغة
     if (entry_1.get() == "" or
         entry_2.get() == "" or
         entry_3.get() == ""):
         messagebox.showwarning("خطأ", "عذراً، املأ جميع الحقول")
         return
-    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py" #مسار صفحة القياسات
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 def open_login():
-    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\login.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\login.py" # مسار صفحة تسجيل الدخول
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 window = Tk()
-window.title('Project')
+window.title('Project') #عنوان الصفحة
 
 window.geometry("396x688")
 window.configure(bg = "#EBD7D7")
@@ -59,7 +60,7 @@ image_1 = canvas.create_image(
     458.0,
     image=image_image_1
 )
-
+# زر التالي
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
@@ -75,7 +76,7 @@ button_1.place(
     width=121.0,
     height=47.0
 )
-
+# زر تسجيل الدخول
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_2.png"))
 button_2 = Button(
@@ -100,7 +101,7 @@ canvas.create_text(
     fill="#000000",
     font=("Inter", 20 * -1)
 )
-
+#حقل الرقم السري
 entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
@@ -129,7 +130,7 @@ canvas.create_text(
     fill="#83787A",
     font=("Inter", 27 * -1)
 )
-
+#حقل البريد الالكتروني
 entry_image_2 = PhotoImage(
     file=relative_to_assets("entry_2.png"))
 entry_bg_2 = canvas.create_image(
@@ -158,7 +159,7 @@ canvas.create_text(
     fill="#83787A",
     font=("Inter", 27 * -1)
 )
-
+#حقل الرقم السري
 entry_image_3 = PhotoImage(
     file=relative_to_assets("entry_3.png"))
 entry_bg_3 = canvas.create_image(

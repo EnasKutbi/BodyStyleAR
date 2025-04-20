@@ -13,53 +13,59 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\clothes\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+# دالة صفحة التفاحة
 def open_apple():
-    file_to_run_path = r"D:\WorkProjects\clothes\apple.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\apple.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
+# صفحة الساعة الرملية
 def open_hourglass():
-    file_to_run_path = r"D:\WorkProjects\clothes\hourglass.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\hourglass.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
+# صفحة الكمثرى
 def open_pears():
-    file_to_run_path = r"D:\WorkProjects\clothes\pears.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\pears.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
+#صفحة المستطيل
 def open_rectangle():
-    file_to_run_path = r"D:\WorkProjects\clothes\rectangle.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\rectangle.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 def determine_body_shape():
+    # نتأكد ان جميع الحقول غير فارغة
     if (entry_5.get() == "" or
         entry_shoulder.get() == "" or 
         entry_chest.get() == "" or 
         entry_waist.get() == "" or 
         entry_hip.get() == ""):
-        messagebox.showwarning("خطأ", "عذراً، املأ جميع الفراغات")
+        messagebox.showwarning("خطأ", "عذراً، املأ جميع الحقول")
         return
+    # نأخذ قيمة الحقول
     shoulder = float(entry_shoulder.get())
     chest = float(entry_chest.get())
     waist = float(entry_waist.get())
     hip = float(entry_hip.get())
     
     if shoulder > chest and chest > waist and waist < hip:
-        open_hourglass()
+        open_hourglass() # يفتح صفحة الساعة الرملية
     elif shoulder < chest and waist < hip:
-        open_apple()
+        open_apple() # صفحة التفاحة
     elif shoulder < chest and waist > hip:
-        open_pears()
+        open_pears() # صفحة الكمثرى
     else:
-        open_rectangle()
+        open_rectangle() # صفحة المستطيل
 
 window = Tk()
 window.title('Project')

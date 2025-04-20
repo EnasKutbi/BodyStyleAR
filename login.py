@@ -13,31 +13,31 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\clothes\assets\frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame1")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def open_sizes():
+def open_sizes():  # تتأكد انه الحقول غير فارغة
     if (entry_1.get() == "" or
         entry_2.get() == ""):
-        messagebox.showwarning("خطا", "عذراً، املأ جميع الفراغات")
+        messagebox.showwarning("خطا", "عذراً، املأ جميع الحقول")
         return
-    file_to_run_path = r"D:\WorkProjects\clothes\sizes.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py" # انتقال للصفحة التالية
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 def open_register():
-    file_to_run_path = r"D:\WorkProjects\clothes\register.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\register.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 
 window = Tk()
-window.title('Project')
+window.title('Project') #عنوان الصفحة
 
-window.geometry("396x688")
+window.geometry("396x688") 
 window.configure(bg = "#EBD7D7")
 
 
@@ -59,7 +59,7 @@ image_1 = canvas.create_image(
     458.0,
     image=image_image_1
 )
-
+# زر التالي
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
@@ -75,7 +75,7 @@ button_1.place(
     width=121.0,
     height=47.0
 )
-
+# زر صفحة مستخدم جديد
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_2.png"))
 button_2 = Button(
@@ -101,6 +101,7 @@ canvas.create_text(
     font=("Inter", 20 * -1)
 )
 
+#حقل الرقم السري
 entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
@@ -130,6 +131,7 @@ canvas.create_text(
     font=("Inter", 27 * -1)
 )
 
+#حقل اسم المستخدم
 entry_image_2 = PhotoImage(
     file=relative_to_assets("entry_2.png"))
 entry_bg_2 = canvas.create_image(

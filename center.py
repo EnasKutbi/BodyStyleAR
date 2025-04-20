@@ -1,3 +1,4 @@
+# دالة توسيط الشاشة
 def center_window(window):
     window.update_idletasks()  
     

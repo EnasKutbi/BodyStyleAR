@@ -13,7 +13,7 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\clothes\assets\frame2")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame2")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -23,14 +23,14 @@ def open_sizes():
     if (entry_1.get() == "" or
         entry_2.get() == "" or
         entry_3.get() == ""):
-        messagebox.showwarning("خطأ", "عذراً، املأ جميع الفراغات")
+        messagebox.showwarning("خطأ", "عذراً، املأ جميع الحقول")
         return
-    file_to_run_path = r"D:\WorkProjects\clothes\sizes.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
 def open_login():
-    file_to_run_path = r"D:\WorkProjects\clothes\login.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\login.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 

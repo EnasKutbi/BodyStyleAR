@@ -13,14 +13,14 @@ from center import center_window
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\clothes\assets\frame4")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\WorkProjects\BodyStyleAR\assets\frame4")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 def open_page():
-    file_to_run_path = r"D:\WorkProjects\clothes\login.py"
+    file_to_run_path = r"D:\WorkProjects\BodyStyleAR\sizes.py"
     window.destroy()
     subprocess.run(["python", file_to_run_path], check=True)
 
